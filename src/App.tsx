@@ -75,9 +75,11 @@ const LoggedInView: React.FC = () => {
   
   const { accountName, email, name, picture, username, chainAccounts } = user;
   const onError = (error: Error) => {
+    console.log("Sign failed", error.message);
     setError(error.message);
   };
   const onSuccess = (results: any) => {
+    console.log("Sign successful. Results:", results);
     setSignResults(results);
   };
 
